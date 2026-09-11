@@ -4,11 +4,11 @@ import type { TechnologiesType } from "../types/technologiesType";
 const TechnologyCard = ({ technology }: { technology: TechnologiesType }) => {
     const [isSelected,setIsSelected] = useState(false)
   return (
-    <div className=" rounded-2xl border border-gray-200 bg-white p-5 m-2 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div className=" rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
       {/* Header */}
       <div className="flex items-center justify-between">
         <img src={technology.icon} alt="React" className="h-12 w-12" />
-        <span className="rounded-full bg-pink-100 px-3 py-1 text-xs font-semibold text-[#D81B7E]">
+        <span className="rounded-full bg-[#D1FAE5] text-[#059669] px-3 py-1 text-xs font-semibold">
           {technology.badge}
         </span>
       </div>
@@ -41,8 +41,8 @@ const TechnologyCard = ({ technology }: { technology: TechnologiesType }) => {
       </div>
 
       {/* Button */}
-      <button onClick={()=>setIsSelected(true)} className="mt-6 w-full rounded-xl bg-black py-3 font-semibold text-[#ffffff] transition hover:opacity-90">
-        {isSelected === true ? 'Added to Stack':'Add to Stack'}
+      <button onClick={()=>setIsSelected(true)} className={`mt-6 w-full rounded-xl py-3 font-semibold ${isSelected === true ?'bg-[#D1FAE5] text-[#059669]' :'bg-black  text-[#ffffff] '}`}>
+        {isSelected === true ? '✓ Added to Stack':'Add to Stack'}
       </button>
     </div>
   );
