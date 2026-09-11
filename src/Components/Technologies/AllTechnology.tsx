@@ -1,8 +1,11 @@
 import React from 'react';
 import type { TechnologiesType } from '../types/technologiesType';
 import TechnologyCard from './TechnologyCard';
+interface StackPropsType{
+    technologies:TechnologiesType[]
+}
 
-const AllTechnology = ({technologies}) => {
+const AllTechnology = ({technologies}:StackPropsType) => {
     return (
         <div className="grid grid-cols-3 ml-23 gap-4 mt-10 w-5xl">
             {

@@ -1,10 +1,19 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import type { TechnologiesType } from "../types/technologiesType";
+import { toast } from "react-toastify";
 
 const TechnologyCard = ({ technology }: { technology: TechnologiesType }) => {
-    const [isSelected,setIsSelected] = useState(false)
+  const [isSelected, setIsSelected] = useState(false);
+
+  const handleSelectedStack = () => {
+    setIsSelected(true);
+    toast.success(`${technology.name} add successfully`);
+  };
+
   return (
-    <div className=" rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg">
+    <div
+      className={`rounded-2xl bg-white p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:shadow-lg ${isSelected === true ? "border-4 border-emerald-300" : "border border-gray-200"}`}
+    >
       {/* Header */}
       <div className="flex items-center justify-between">
         <img src={technology.icon} alt="React" className="h-12 w-12" />
@@ -41,8 +50,11 @@ const TechnologyCard = ({ technology }: { technology: TechnologiesType }) => {
       </div>
 
       {/* Button */}
-      <button onClick={()=>setIsSelected(true)} className={`mt-6 w-full rounded-xl py-3 font-semibold ${isSelected === true ?'bg-[#D1FAE5] text-[#059669]' :'bg-black  text-[#ffffff] '}`}>
-        {isSelected === true ? '✓ Added to Stack':'Add to Stack'}
+      <button
+        onClick={() => handleSelectedStack()}
+        className={`mt-6 w-full rounded-xl py-3 font-semibold ${isSelected === true ? "bg-[#D1FAE5] text-[#059669]" : "bg-black  text-[#ffffff] "}`}
+      >
+        {isSelected === true ? "✓ Added to Stack" : "Add to Stack"}
       </button>
     </div>
   );
