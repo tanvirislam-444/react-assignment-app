@@ -11,7 +11,7 @@ const Banner = () => {
               next project.</p>
               <div>
            <button className='bg-[linear-gradient(90deg,#F97316_0%,#EC4899_100%)] px-5 py-2 rounded-[10px] text-white'>Explore Technologies</button>
-           <button className='px-7 py-2 border rounded-[10px] border-b-gray-400 mx-3'>Learn More</button>
+           <button className='px-7 py-2 rounded-[10px] border-gray-200 bg-white p-6 shadow-sm mx-3 text-[#374151]'>Learn More</button>
            </div>
            </div>
            <img src={bannerLogo} alt="" />
