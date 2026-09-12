@@ -3,6 +3,7 @@ import Banner from "./Components/Banner"
 import Nav from "./Components/Nav"
 import Technologies from "./Components/Technologies/Technologies";
 import type { TechnologiesType } from "./Components/types/technologiesType";
+import Footer from "./Components/Footer";
 
 
 const technologiesPromise = async():Promise<TechnologiesType[]>=>{
@@ -21,6 +22,7 @@ function App() {
    <Suspense fallback={<h2>Loading......</h2>}>
      <Technologies technologiesPromise={technologiesPromise()}/>
    </Suspense>
+   <Footer/>
    </>
   )
 }
