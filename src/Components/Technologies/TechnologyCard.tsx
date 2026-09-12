@@ -1,13 +1,20 @@
-import { useState } from "react";
+import { useState, type Dispatch, type SetStateAction } from "react";
 import type { TechnologiesType } from "../types/technologiesType";
 import { toast } from "react-toastify";
+interface TechnologiesPropsType{
+    technology:TechnologiesType,
+    selectedStack: TechnologiesType[],
+    setselectedStack:Dispatch<SetStateAction<TechnologiesType[]>>
+}
 
-const TechnologyCard = ({ technology }: { technology: TechnologiesType }) => {
+const TechnologyCard = ({ technology,selectedStack,setselectedStack }:TechnologiesPropsType) => {
   const [isSelected, setIsSelected] = useState(false);
 
   const handleSelectedStack = () => {
     setIsSelected(true);
     toast.success(`${technology.name} add successfully`);
+    // SelectedStack logic
+   setselectedStack([...selectedStack,technology])
   };
 
   return (
@@ -52,6 +59,7 @@ const TechnologyCard = ({ technology }: { technology: TechnologiesType }) => {
       {/* Button */}
       <button
         onClick={() => handleSelectedStack()}
+        disabled={isSelected}
         className={`mt-6 w-full rounded-xl py-3 font-semibold ${isSelected === true ? "bg-[#D1FAE5] text-[#059669]" : "bg-black  text-[#ffffff] "}`}
       >
         {isSelected === true ? "✓ Added to Stack" : "Add to Stack"}

@@ -1,4 +1,4 @@
-import React, { use } from 'react';
+import React, { use, useState } from 'react';
 import type { TechnologiesType } from '../types/technologiesType';
 import AllTechnology from './AllTechnology';
 import SelectedStack from './SelectedStack';
@@ -9,7 +9,7 @@ export interface TechnologiesProps{
 
 const Technologies = ({technologiesPromise}:TechnologiesProps) => {
     const technologies= use(technologiesPromise);
-    console.log(technologies)
+    const [selectedStack,setselectedStack]=useState<TechnologiesType[]>([]);
     return (
         <div>
             <div className='ml-25'>
@@ -18,10 +18,10 @@ const Technologies = ({technologiesPromise}:TechnologiesProps) => {
             </div>
             <div className='flex'>
             <div>
-                <AllTechnology technologies={technologies}/>
+                <AllTechnology technologies={technologies} selectedStack={selectedStack} setselectedStack={setselectedStack}/>
             </div>
             <div>
-                <SelectedStack/>
+                <SelectedStack selectedStack={selectedStack} setselectedStack={setselectedStack}/>
             </div>
             </div>
          </div>
