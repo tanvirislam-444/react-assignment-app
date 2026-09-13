@@ -9,7 +9,7 @@ interface StackPropsType{
 
 const AllTechnology = ({technologies,selectedStack,setselectedStack}:StackPropsType) => {
     return (
-        <div className="grid grid-cols-3 ml-23 gap-4 mt-10 w-5xl">
+        <div className="grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-10">
             {
               technologies.map((technology:TechnologiesType)=>{
                return (

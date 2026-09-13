@@ -11,7 +11,7 @@ const SelectedStack = ({ selectedStack, setselectedStack }: ISelectedProps) => {
         setselectedStack(restTechnology)
     }
   return (
-    <div className="px-8 py-5 mt-10 ml-20 border border-gray-200 bg-white p-6 rounded-[10px] shadow-sm">
+    <div className="w-full px-8 py-5 mt-10 ml-20 border border-gray-200 bg-white p-6 rounded-[10px] shadow-sm">
       <div>
         <h3 className="font-semibold text-2xl">Your Stack</h3>
         <p className="text-[#475569]">
@@ -20,7 +20,7 @@ const SelectedStack = ({ selectedStack, setselectedStack }: ISelectedProps) => {
       </div>
         {selectedStack.length === 0 ? (
     <div className="h-[180px] flex items-center justify-center">
-      <p className="px-20 py-15 border border-gray-200 bg-white rounded-[10px] text-[#475569]">Your Stack is empty</p>
+      <p className="px-10 py-15 border border-gray-200 bg-white rounded-[10px] text-gray-300">Your Stack is empty</p>
     </div>
   ):(selectedStack.map((technology: TechnologiesType) => {
         return (
