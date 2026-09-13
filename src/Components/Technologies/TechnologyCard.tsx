@@ -1,4 +1,4 @@
-import { useState, type Dispatch, type SetStateAction } from "react";
+import {type Dispatch, type SetStateAction } from "react";
 import type { TechnologiesType } from "../types/technologiesType";
 import { toast } from "react-toastify";
 interface TechnologiesPropsType{
@@ -8,10 +8,11 @@ interface TechnologiesPropsType{
 }
 
 const TechnologyCard = ({ technology,selectedStack,setselectedStack }:TechnologiesPropsType) => {
-  const [isSelected, setIsSelected] = useState(false);
-
-  const handleSelectedStack = () => {
-    setIsSelected(true);
+const isSelected = selectedStack.some(
+  (item) => item.id === technology.id
+);
+ const handleSelectedStack = () => {
+    if (isSelected) return;
     toast.success(`${technology.name} add successfully`);
     // SelectedStack logic
    setselectedStack([...selectedStack,technology])
@@ -23,7 +24,7 @@ const TechnologyCard = ({ technology,selectedStack,setselectedStack }:Technologi
     >
       {/* Header */}
       <div className="flex items-center justify-between">
-        <img src={technology.icon} alt="React" className="h-12 w-12" />
+        <img src={technology.icon} alt={technology.name} className="h-12 w-12" />
         <span className="rounded-full bg-[#D1FAE5] text-[#059669] px-3 py-1 text-xs font-semibold">
           {technology.badge}
         </span>

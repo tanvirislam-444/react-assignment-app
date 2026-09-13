@@ -86,7 +86,7 @@ component
 ## 3. What does the useState hook do, and where did you use it in this project?
 
 useState is used to creat and manage state in a function component. i used useState
-in Technologies.tsx and TechnologyCard section in my project
+in Technologies.tsx section in my project
 
 ## 4. What does the useEffect hook do, and why did you need it to load the JSON data?
 

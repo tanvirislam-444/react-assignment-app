@@ -20,7 +20,7 @@ const Nav = () => {
             </div>
             <div className='px-2 py-4 gap-3 flex'>
                 <button >Sign In</button>
-                <button className='bg-[#DB2777] text-white rounded-3xl px-6 py-2 '>Sign Up</button>
+                <button className='brand-gradient text-white rounded-3xl px-6 py-2 '>Sign Up</button>
             </div>
             </div>
         </nav>

@@ -1,4 +1,4 @@
-import React, { type Dispatch, type SetStateAction } from "react";
+import { type Dispatch, type SetStateAction } from "react";
 import type { TechnologiesType } from "../types/technologiesType";
 interface ISelectedProps {
   selectedStack: TechnologiesType[];
@@ -7,11 +7,11 @@ interface ISelectedProps {
 
 const SelectedStack = ({ selectedStack, setselectedStack }: ISelectedProps) => {
     const handleRemoveTechnology = (technology:TechnologiesType)=>{
-        const restTechnology= selectedStack.filter((item)=> item.name !== technology.name)
+        const restTechnology= selectedStack.filter((item)=> item.id !== technology.id)
         setselectedStack(restTechnology)
     }
   return (
-    <div className="w-full px-8 py-5 mt-10 ml-20 border border-gray-200 bg-white p-6 rounded-[10px] shadow-sm">
+    <div className="w-full px-5 py-5 mt-10 ml-5 border border-gray-200 bg-white rounded-[10px] shadow-sm">
       <div>
         <h3 className="font-semibold text-2xl">Your Stack</h3>
         <p className="text-[#475569]">

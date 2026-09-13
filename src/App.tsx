@@ -4,6 +4,7 @@ import Nav from "./Components/Nav"
 import Technologies from "./Components/Technologies/Technologies";
 import type { TechnologiesType } from "./Components/types/technologiesType";
 import Footer from "./Components/Footer";
+import './App.css'
 
 
 const technologiesPromise = async():Promise<TechnologiesType[]>=>{
